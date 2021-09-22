@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Omegle ChatBot",
+    "version_name": "1.0.0",
+    "version": "0.001",
+    "description": "Automatically send messages in Omegle!",
+    "icons": {  "16": "icon16.png",
+                "48": "icon48.png",
+                "128": "icon128.png" },
+    "content_scripts": [
+        {
+            "matches": ["https://www.omegle.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": ["activeTab", "tabs", "storage"],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "omegleChatBot"
+    }
+}
