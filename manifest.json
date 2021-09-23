@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "omegleChatBot",
-    "version_name": "2.0",
-    "version": "0.002",
+    "version_name": "3.0",
+    "version": "0.003",
     "description": "Automatically send messages in Omegle!",
     "icons": {  "16": "icon16.png",
                 "48": "icon48.png",

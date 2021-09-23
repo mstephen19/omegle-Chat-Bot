@@ -121,7 +121,7 @@ window.onload = function(){
         // ==========================================================================
         userMessage = divBox.children[1].value;
         // console.log(userMessage) // returns what is typed in textarea by user
-        var chatBotInterval = setInterval(chatBot, 3500)
+        var chatBotInterval = setInterval(chatBot, 3500);
         function chatBot(){
             const dscn = document.querySelector('.disconnectbtn');
             const messageBox = document.querySelector('.chatmsg');
