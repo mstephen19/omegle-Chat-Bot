@@ -15,9 +15,9 @@ window.onload = function(){
     divBox.style.alignItems = "center";
     divBox.style.borderRadius = "10px";
     divBox.style.padding = "10px";
-    divBox.style.border = "2px solid red";
+    divBox.style.border = "1px solid red";
     divBox.style.zIndex = "2";
-    divBox.style.boxShadow = "0 0 10px black";
+    divBox.style.boxShadow = "0 0 15px black";
     //create h1 tag
     const header = document.createElement('h1');
     const headerText = document.createTextNode("omegleChatBot");
@@ -65,6 +65,7 @@ window.onload = function(){
     startButton.style.border = "none";
     startButton.style.borderRadius = "10px"
     startButton.style.boxShadow = "-1px 3px 0 black"
+    startButton.style.marginTop = "10px";
     //create stop button
     const stopButton = document.createElement('button');
     const stopButtonText = document.createTextNode("Stop");
@@ -82,11 +83,18 @@ window.onload = function(){
     stopButton.style.border = "none";
     stopButton.style.borderRadius = "10px"
     stopButton.style.boxShadow = "-1px 3px 0 black"
-    //Create script has been run
+    stopButton.style.marginTop = "10px";
+    //create stop button
+    const versionNumber = document.createElement('p');
+    const versionNumberText = document.createTextNode("Version 3.0");
+    versionNumber.appendChild(versionNumberText);
+    divBox.appendChild(versionNumber);
+    versionNumber.style.fontSize = "10px";
+    //create script has been run
     // let scriptCount = 0
     // const scriptNotif = document.createElement('p');
     // const scriptNotifText = document.createTextNode(`Script has been run ${scriptCount} times`);
-    // scriptNotif.classList.add('scriptNotif')
+    // scriptNotif.classList.add('scriptNotif');
     // scriptNotif.appendChild(scriptNotifText);
     // divBox.appendChild(scriptNotif);
     //fix entire window to top right of screen
@@ -99,7 +107,7 @@ window.onload = function(){
     let userMessage = "Please insert a custom message using the extension's GUI.";
     let scriptCount = 0
     const startFuncBtn = document.querySelector('.startBtn');
-    const stopFuncBtn = document.querySelector('.stopBtn')
+    const stopFuncBtn = document.querySelector('.stopBtn');
     // console.log(startFuncBtn); // returns good
     // console.log(userMessage) // returns default message
     startFuncBtn.addEventListener('click', function chatBot(){
@@ -109,7 +117,7 @@ window.onload = function(){
         setTimeout(function(){
             document.querySelector('.startBtn').style.boxShadow = "-1px 3px 0 black";
             document.querySelector('.startBtn').style.transform = "translate(0px, 0px";
-        }, 200);
+        }, 150);
         // ==========================================================================
         userMessage = divBox.children[1].value;
         // console.log(userMessage) // returns what is typed in textarea by user
@@ -134,10 +142,12 @@ window.onload = function(){
             setTimeout(function(){
                 document.querySelector('.stopBtn').style.boxShadow = "-1px 3px 0 black";
                 document.querySelector('.stopBtn').style.transform = "translate(0px, 0px";
-            }, 200);
+            }, 150);
             // ==========================================================================
             clearInterval(chatBotInterval);
-            alert(`You sent ${scriptCount} messages using omegleChatBot`);
+            setTimeout(function(){
+                alert(`Automatically sent ${scriptCount} messages during this session.\nReload page to reset this value.`);
+            },250);
         });
     });
 };
